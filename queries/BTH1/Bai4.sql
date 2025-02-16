@@ -1,0 +1,39 @@
+USE MASTER;
+
+IF NOT EXISTS (
+  SELECT
+    name
+  FROM
+    sys.databases
+  WHERE
+    name = N'QLThuePhong'
+) CREATE DATABASE QLThuePhong;
+
+USE QLThuePhong;
+
+-- Tao table
+CREATE TABLE PHONG (
+  MaPhong CHAR(10) PRIMARY KEY,
+  SoGiuong INT NOT NULL,
+  NVPhuTrach NVARCHAR(50) NOT NULL,
+  GiaTien DECIMAL(8, 2) NOT NULL,
+  GhiChu NVARCHAR(MAX)
+);
+
+CREATE TABLE KHACHHANG(
+  MaKH INT IDENTITY(1, 1) PRIMARY KEY,
+  TenKH NVARCHAR(50) NOT NULL,
+  DiaChi NVARCHAR(100) NOT NULL,
+  SDT NVARCHAR(12) NOT NULL,
+  GhiChu NVARCHAR(MAX)
+);
+
+CREATE TABLE THUEPHONG(
+  MaKH INT,
+  MaPhong CHAR(10),
+  NgayLayPhong DATE,
+  NgayTraPhong DATE NOT NULL,
+  TienDaTra DECIMAL(8, 2) NOT NULL,
+  GhiChu NVARCHAR(MAX),
+  CONSTRAINT PRIMARY KEY (MaKH, MaPhong, NgayLayPhong)
+);
