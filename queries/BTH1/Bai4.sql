@@ -35,5 +35,29 @@ CREATE TABLE THUEPHONG(
   NgayTraPhong DATE NOT NULL,
   TienDaTra DECIMAL(8, 2) NOT NULL,
   GhiChu NVARCHAR(MAX),
-  CONSTRAINT PRIMARY KEY (MaKH, MaPhong, NgayLayPhong)
+  PRIMARY KEY (MaKH, MaPhong, NgayLayPhong),
+  CONSTRAINT FK_MaKH FOREIGN KEY (MaKH) REFERENCES KHACHHANG(MaKH),
+  CONSTRAINT FK_MaPhong FOREIGN KEY (MaPhong) REFERENCES PHONG(MaPhong),
 );
+
+-- Them records
+-- Them PHONG
+SELECT
+  *
+FROM
+  PHONG;
+
+INSERT INTO
+  PHONG (MaPhong, SoGiuong, NVPhuTrach, GiaTien)
+VALUES
+  ('PHONG00001', 1, 'Nguyen Van A', 100.0);
+
+INSERT INTO
+  PHONG (MaPhong, SoGiuong, NVPhuTrach, GiaTien)
+VALUES
+  ('PHONG00002', 2, 'Tran Thi B', 200);
+
+INSERT INTO
+  PHONG (MaPhong, SoGiuong, NVPhuTrach, GiaTien)
+VALUES
+  ('PHONG00003', 1, 'Tran Thi B', 150);
