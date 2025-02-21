@@ -42,11 +42,6 @@ CREATE TABLE THUEPHONG(
 
 -- Them records
 -- Them PHONG
-SELECT
-  *
-FROM
-  PHONG;
-
 INSERT INTO
   PHONG (MaPhong, SoGiuong, NVPhuTrach, GiaTien)
 VALUES
@@ -61,3 +56,65 @@ INSERT INTO
   PHONG (MaPhong, SoGiuong, NVPhuTrach, GiaTien)
 VALUES
   ('PHONG00003', 1, 'Tran Thi B', 150);
+
+-- Them KHACHHANG
+INSERT INTO
+  KHACHHANG(TenKH, DiaChi, SDT)
+VALUES
+  ('Nguyen Van An', 'TPHCM', 0123456789);
+
+INSERT INTO
+  KHACHHANG(TenKH, DiaChi, SDT)
+VALUES
+  ('Tran Thi B', 'Ha Noi', 0987654321);
+
+INSERT INTO
+  KHACHHANG(TenKH, DiaChi, SDT)
+VALUES
+  ('Dinh Van C', 'Da Nang', 0985554321);
+
+-- Them THUEPHONG
+INSERT INTO
+  THUEPHONG (
+    MaKH,
+    MaPhong,
+    NgayLayPhong,
+    NgayTraPhong,
+    TienDaTra
+  )
+VALUES
+  (1, 'PHONG00001', '2024-10-10', '2024-10-11', 120);
+
+INSERT INTO
+  THUEPHONG (
+    MaKH,
+    MaPhong,
+    NgayLayPhong,
+    NgayTraPhong,
+    TienDaTra
+  )
+VALUES
+  (
+    1,
+    'PHONG00002',
+    '2024-12-10',
+    '2024-12-15',
+    1000
+  );
+
+INSERT INTO
+  THUEPHONG (
+    MaKH,
+    MaPhong,
+    NgayLayPhong,
+    NgayTraPhong,
+    TienDaTra
+  )
+VALUES
+  (
+    3,
+    'PHONG00003',
+    '2025-02-03',
+    '2025-02-05',
+    250
+  );
