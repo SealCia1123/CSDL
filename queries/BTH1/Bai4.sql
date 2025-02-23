@@ -1,12 +1,7 @@
 USE MASTER;
 
 IF NOT EXISTS (
-  SELECT
-    name
-  FROM
-    sys.databases
-  WHERE
-    name = N'QLThuePhong'
+  SELECT name FROM sys.databases WHERE name = N'QLThuePhong'
 ) CREATE DATABASE QLThuePhong;
 
 USE QLThuePhong;
@@ -75,46 +70,16 @@ VALUES
 
 -- Them THUEPHONG
 INSERT INTO
-  THUEPHONG (
-    MaKH,
-    MaPhong,
-    NgayLayPhong,
-    NgayTraPhong,
-    TienDaTra
-  )
+  THUEPHONG (MaKH, MaPhong, NgayLayPhong, NgayTraPhong, TienDaTra)
 VALUES
   (1, 'PHONG00001', '2024-10-10', '2024-10-11', 120);
 
 INSERT INTO
-  THUEPHONG (
-    MaKH,
-    MaPhong,
-    NgayLayPhong,
-    NgayTraPhong,
-    TienDaTra
-  )
+  THUEPHONG (MaKH, MaPhong, NgayLayPhong, NgayTraPhong, TienDaTra)
 VALUES
-  (
-    1,
-    'PHONG00002',
-    '2024-12-10',
-    '2024-12-15',
-    1000
-  );
+  (1, 'PHONG00002', '2024-12-10', '2024-12-15', 1000);
 
 INSERT INTO
-  THUEPHONG (
-    MaKH,
-    MaPhong,
-    NgayLayPhong,
-    NgayTraPhong,
-    TienDaTra
-  )
+  THUEPHONG (MaKH, MaPhong, NgayLayPhong, NgayTraPhong, TienDaTra)
 VALUES
-  (
-    3,
-    'PHONG00003',
-    '2025-02-03',
-    '2025-02-05',
-    250
-  );
+  (3, 'PHONG00003', '2025-02-03', '2025-02-05', 250);
